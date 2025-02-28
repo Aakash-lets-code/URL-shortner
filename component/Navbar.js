@@ -3,18 +3,18 @@ import Link from 'next/link'
 
 const Navbar = () => {
   return (
-    <nav  className='h-12 bg-purple-800 flex justify-between items-center text-white'>
-        <div className='text-xl font-bold ' >
+    <nav  className='h-14 bg-purple-800 flex justify-between items-center text-white px-3 py-2 '>
+        <div className='text-xl font-bold cursor-pointer ' >
             Bitlink
         </div>
         <ul className='flex justify-center gap-3 items-center' >
-            <li>Home</li>
-            <li>About</li>
-            <li>Shorten</li>
-            <li>Contact Us</li>
+           <Link href="/" > <li>Home</li> </Link>
+           <Link href="/" > <li>About</li> </Link>
+           <Link href="/generate" > <li>Shorten</li> </Link>
+           <Link href="/" > <li>Contact Us</li> </Link>
             <li className='gap-3' >
-                <button className='shadow-2xl p-1 rounded-2xl bg-purple-600' >Try Now</button>
-                <button className='shadow-2xl p-1 rounded-2xl bg-purple-600' >Github</button>
+                <Link href="/generate" > <button className='shadow-2xl px-3 py-1 rounded-xl bg-purple-600 font-bold ' >Try Now</button> </Link>
+                <Link href="/" > <button className='shadow-2xl px-3 py-1 rounded-xl bg-purple-600 font-bold ' >Github</button> </Link>
             </li>
         </ul>
         
