@@ -8,6 +8,36 @@ const shorten = () => {
     const [shorturl, setshorturl] = useState("");
     const [generate, setGenerate] = useState(false);
 
+    const genrate = () => {
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        const raw = JSON.stringify({ 
+            "url": url, 
+            "shorturl": shorturl 
+        });
+
+        const requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+        };
+
+        fetch("/api/genrate", requestOptions)
+            .then((response) => response.json())
+            .then((result) => {
+                seturl("")
+                setshorturl("")
+                
+                console.log
+                alert(result.message)
+            })
+            .catch((error) => console.error(error));
+
+
+    }
+
 
 
     return (
@@ -26,12 +56,12 @@ const shorten = () => {
                 <input
                     type="text"
                     className='p-4 py-2 bg-white rounded-lg  '
-                    placeholder='Enter your preferred short URL' 
+                    placeholder='Enter your preferred short URL'
                     value={shorturl}
                     onChange={e => { setshorturl(e.target.value) }}
                 />
                 {/* <button className='p-2 rounded-2xl bg-amber-800 text-white' >Generate</button> */}
-                <button className='shadow-2xl px-3 py-1 rounded-lg bg-purple-600 font-bold text-white' >Generate</button>
+                <button onClick={genrate} className='shadow-2xl px-3 py-1 rounded-lg bg-purple-600 font-bold text-white' >Generate</button>
             </div>
 
         </div>
