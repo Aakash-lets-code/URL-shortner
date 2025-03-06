@@ -64,11 +64,11 @@ const shorten = () => {
                 {/* <button className='p-2 rounded-2xl bg-amber-800 text-white' >Generate</button> */}
                 <button onClick={genrate} className='shadow-2xl px-3 py-1 rounded-lg bg-purple-600 font-bold text-white' >Generate</button>
 
-                 <code className='w-full font-bold bg-purple-200 text-black text-center py-2 rounded-lg' >
+                {generated && <code className='w-full font-bold bg-purple-200 text-black text-center py-2 rounded-lg' >
 
-                   Your link is : <Link target="_blank" href={generated} >{generated}</Link> 
+                    Your link is : <Link target="_blank" href={generated} >{generated}</Link>
 
-                </code>
+                </code>}
 
             </div>
 
