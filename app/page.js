@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main>
-      <section className="grid grid-cols-2 text-black h-[50vh] bg-purple-200" >
+      <section className="grid grid-cols-2 text-black md:h-[50vh] bg-purple-200 text-xs md:text-base" >
         <div className="flex flex-col items-center justify-center gap-3" >
           <p className="text-3xl font-bold poppins ">
             The best URL shortner in the market

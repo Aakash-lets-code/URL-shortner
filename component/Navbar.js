@@ -5,13 +5,13 @@ const Navbar = () => {
 
   return (
 
-    <nav className='h-14 bg-purple-800 flex justify-between items-center text-white px-3 py-2 '>
+    <nav className='md:h-14 bg-purple-800 flex justify-between items-center flex-col md:flex-row text-white px-3 py-2 text-sm md:text-base h-fit gap-1 md:gap-0'>
 
       <div className='text-xl font-bold cursor-pointer ' >
         <Link href="/" >BitLink</Link>
       </div>
 
-      <ul className='flex justify-center gap-3 items-center' >
+      <ul className='flex justify-center gap-3 items-center flex-wrap md:flex-row' >
 
         <Link href="/" > <li>Home</li> </Link>
         <Link href="/about" > <li>About</li> </Link>
